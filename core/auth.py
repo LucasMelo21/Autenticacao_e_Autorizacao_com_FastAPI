@@ -15,7 +15,7 @@ from core.security import verificar_senha
 from pydantic import EmailStr
 
 oauth2_schema = OAuth2PasswordBearer(
-    tokenURL=f"{settings.API_V1_STR}/usuarios/login"
+    tokenUrl=f"{settings.API_V1_STR}/usuarios/login"
 )
 
 async def autenticar(email: EmailStr, senha: str, db: AsyncSession) -> Optional[UsuarioModel]:
