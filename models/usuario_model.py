@@ -5,7 +5,7 @@ from core.configs import settings
 
 class UsuarioModel(settings.DBBaseModel):
     __tablename__ = 'usuarios'
-    id = Column(integer, primary_key=True)
+    id = Column(Integer, primary_key=True)
     nome = Column(String(100), nullable=True)
     sobrenome = Column(String(100), nullable=True)
     email = Column(String(100), nullable=False, unique=True)

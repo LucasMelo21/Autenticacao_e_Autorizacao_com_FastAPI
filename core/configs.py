@@ -1,11 +1,11 @@
-from typing import List
+from typing import ClassVar
 from pydantic_settings import BaseSettings
 from sqlalchemy.ext.declarative import declarative_base
 
 class Settings(BaseSettings):
     API_V1_STR: str = "/api/v1"
-    DB_URL: str = 'postgresql+asyncpg://postgres:1234@localhost:5432/faculdade'
-    DBBaseModel = declarative_base()
+    DB_URL: str = 'postgresql+asyncpg://postgres:1234@localhost:5432/testando'
+    DBBaseModel: ClassVar = declarative_base()
 
     JWT_SECRET: str = ''
     """"
@@ -19,4 +19,4 @@ class Settings(BaseSettings):
     class Config:
         case_sensitive = True
 
-settings: Settings = Settings()
+settings = Settings()

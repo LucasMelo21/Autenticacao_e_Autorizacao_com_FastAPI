@@ -4,6 +4,8 @@ from core.database import engine
 async def criar_tabelas():
     print('Criando tabelas...')
 
+    from models import __all_models
+
     async with engine.begin() as conn:
         await conn.run_sync(settings.DBBaseModel.metadata.drop_all)
         await conn.run_sync(settings.DBBaseModel.metadata.create_all)
