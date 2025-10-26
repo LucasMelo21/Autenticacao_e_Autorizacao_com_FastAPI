@@ -1,5 +1,5 @@
-from typing import Optional
-from pydantic import BaseModel as SCBaseModel, HttpUrl
+from typing import Optional, List
+from pydantic import BaseModel as SCBaseModel, HttpUrl,ConfigDict
 
 
 class ArtigoSchema(SCBaseModel):
@@ -9,5 +9,4 @@ class ArtigoSchema(SCBaseModel):
     url_fonte: HttpUrl
     usuario_id: Optional[int]
 
-    class Config:
-        orm_mode = True
+    model_config = ConfigDict(from_attributes=True)

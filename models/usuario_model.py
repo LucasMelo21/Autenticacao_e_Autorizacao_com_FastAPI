@@ -9,7 +9,7 @@ class UsuarioModel(settings.DBBaseModel):
     nome = Column(String(100), nullable=True)
     sobrenome = Column(String(100), nullable=True)
     email = Column(String(100), nullable=False, unique=True)
-    password = Column(String(100), nullable=False, unique=True)
+    senha = Column(String(100), nullable=False, unique=True)
     eh_admin = Column(Boolean, default=False)
     artigos = relationship(
         "ArtigoModel",
